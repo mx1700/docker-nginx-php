@@ -1,0 +1,13 @@
+nginx:
+  build: nginx
+  ports:
+    - "80:80"
+  volumes:
+    - ./app:/app
+  links: 
+    - php
+
+php:
+  build: php-fpm
+  volumes:
+    - ./app:/app
